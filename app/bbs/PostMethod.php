@@ -21,7 +21,7 @@ class PostMethod
         $data = [];
         for ($fileNumber = 0; $fileNumber < count($fileLists); $fileNumber++) {
             $fileContents = file_get_contents($fileLists[$fileNumber], '.txt');
-            $fields = explode('|', "{$fileContents}<br/>");
+            $fields = explode('|', "{$fileContents}");
     
             $post = new Post();
             $post->name = $fields[0];

@@ -1,7 +1,4 @@
 <?php
-use App\bbs\Post;
-use App\bbs\PostMethod;
-use App\Http\Controllers\BbsController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
