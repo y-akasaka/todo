@@ -15,7 +15,6 @@
             <p>{{$item->content}}</p>
             <hr>
         @endforeach
-        <p>----------------------------------------</p><br/>
 
 </body>
 </html>
