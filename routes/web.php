@@ -23,3 +23,5 @@ Route::get('/input', 'BbsController@input');
 Route::get('/list', 'BbsController@list');
 
 Route::post('/save', 'BbsController@save');
+
+Route::get('/show', 'BbsController@show');

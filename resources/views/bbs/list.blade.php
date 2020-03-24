@@ -7,12 +7,15 @@
     <title>Document</title>
 </head>
 <body>
-
         @foreach ($list as $item)
-            <p>{{$item->fileName}}</p>
+            <p>{{basename($item->fileName, '.txt')}}</p>
             <p>{{$item->name}}</p>
             <p>{{$item->title}}</p>
             <p>{{$item->content}}</p>
+            <form action="/show" method="get">
+            <input type="hidden" name="task" value="{{basename($item->fileName, '.txt')}}">
+                <button type="submit">詳細画面</button>
+            </form>
             <hr>
         @endforeach
 

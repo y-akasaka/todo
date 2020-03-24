@@ -40,7 +40,7 @@ class BbsController extends Controller
     }
 
     public function save()
-    {
+    {   
         date_default_timezone_set('Asia/Tokyo');
         $fileName = date('Y-m-d H:i:s');
         $name = $_POST['name'];
@@ -55,5 +55,12 @@ class BbsController extends Controller
         $postMethod->save($post);
 
         return view('bbs/save');
+    }
+    
+    public function show()
+    {
+        $postMethod = new PostMethod;
+        $content = $postMethod-> getContent();
+        return view('bbs/show', ['content' => $content]);
     }
 }

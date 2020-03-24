@@ -24,6 +24,7 @@ class PostMethod
             $fields = explode('|', "{$fileContents}");
     
             $post = new Post();
+            $post->fileName = $fileLists[$fileNumber];
             $post->name = $fields[0];
             $post->title = $fields[1];
             $post->content = $fields[2];
@@ -35,5 +36,13 @@ class PostMethod
     public function delete($fileName)
     {
         unlink($fileName);
+    }
+
+    public function getContent()
+    {
+        $file = $_GET['task'];
+        $fileName = "/Applications/MAMP/htdocs/BBS/bbsContents/{$file}.txt";
+        $content = file_get_contents($fileName);
+        return $content;
     }
 }
